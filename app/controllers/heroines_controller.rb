@@ -3,7 +3,11 @@ class HeroinesController < ApplicationController
   before_action :get_heroine, only: %i(show)
 
   def index
-    @heroines = Heroine.all
+    if params[:q]
+      @heroines = Heroine.search_by_power(params[:q])
+    else
+      @heroines = Heroine.all
+    end
   end
 
   def show

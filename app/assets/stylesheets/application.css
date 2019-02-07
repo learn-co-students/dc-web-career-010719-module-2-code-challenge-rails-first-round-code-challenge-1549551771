@@ -82,6 +82,10 @@ body {
   opacity: 0.3;
 }
 
+.filter-actions {
+  margin-bottom: 10px;
+}
+
 .details {
   list-style-type: none;
   padding: 0;
@@ -118,9 +122,10 @@ body {
   display: inline-block;
 }
 
+/* 
 .form-field input[type='text'] {
   border-style: solid;
-}
+} */
 
 .form-errors {
   padding: 5px;
@@ -149,5 +154,6 @@ body {
 }
 
 .field_with_errors input {
+  border-style: solid;
   border-color: #f44336;
 }

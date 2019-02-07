@@ -6,4 +6,8 @@ class Power < ApplicationRecord
   def display_name
     self.name.titleize
   end
+
+  def self.search(name)
+    Power.where('name LIKE ?', "%#{name}%")
+  end
 end
