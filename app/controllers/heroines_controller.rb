@@ -11,12 +11,12 @@ class HeroinesController < ApplicationController
 
   def new
     @heroine = Heroine.new
-    @powers = Power.all
   end
 
   def create
     @heroine = Heroine.new(heroine_params)
-    if @heroine.save!
+
+    if @heroine.save
       redirect_to @heroine
     else
       render :new

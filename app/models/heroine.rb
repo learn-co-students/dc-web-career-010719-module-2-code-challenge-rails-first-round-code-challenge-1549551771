@@ -3,5 +3,5 @@ class Heroine < ApplicationRecord
   delegate :name, :display_name, :description, to: :power, prefix: true
 
   validates :name, presence: true
-  validates :super_name, presence: true
+  validates :super_name, presence: true, uniqueness: true
 end
