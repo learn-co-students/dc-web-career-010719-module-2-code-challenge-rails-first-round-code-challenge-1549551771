@@ -4,6 +4,11 @@ class HeroinesController < ApplicationController
     @heroines = Heroine.all
   end
 
+  def search
+    @query = params[:q]
+    @powers = Power.search(params[:q])
+  end
+
   def show
     @heroine = Heroine.find(params[:id])
   end

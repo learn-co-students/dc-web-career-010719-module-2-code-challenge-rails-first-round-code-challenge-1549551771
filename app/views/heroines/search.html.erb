@@ -1,0 +1,10 @@
+<h2>Search results for <%= @query %></h2>
+
+<ul>
+  <% @powers.each do |power| %>
+    <li><%= link_to power.name.capitalize, power_path(power) %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Heroine index page", heroines_path %><br>
+<%= link_to "Power index page", powers_path %>
