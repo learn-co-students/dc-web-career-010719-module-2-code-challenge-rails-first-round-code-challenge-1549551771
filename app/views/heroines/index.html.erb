@@ -1,10 +1,29 @@
-<h2>All Heroines</h2>
+<div class="title-content">
+  <h2 class="title">All Heroines</h2>
+</div>
 
-<ul>
-  <% @heroines.each do |heroine| %>
-    <li>
-      <%= heroine.super_name %>
-    </li>
-    <br>
-  <% end %>
-</ul>
+<div class="main-content">
+  <div class="item-list">
+    <div class="filter-actions">
+      <%= form_tag(heroines_path, method: "get") do %>
+        <%= text_field_tag(:q) %>
+        <%= submit_tag("Search") %>
+      <% end %>
+    </div>
+
+    <% if @heroines.empty? %>
+      <h3 class="item-list-title empty">No Heroines Found</h3>
+    <% else %>
+      <ul>
+        <% @heroines.each do |heroine| %>
+          <li><%= link_to heroine.super_name, heroine %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+
+  <div class="action-items">
+    <%= link_to "View All Powers", powers_path %>
+    <%= link_to "Create a New Heroine", new_heroine_path %>
+  </div>
+</div>

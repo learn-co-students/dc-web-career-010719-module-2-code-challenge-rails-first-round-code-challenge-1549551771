@@ -1,0 +1,28 @@
+<%= form_for @heroine do |f| %>
+  <% if @heroine.errors.any? %>
+    <div class="form-errors">
+      <h4>There were some errors:</h4>
+      <ul>
+        <% @heroine.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="form-field">
+    <%= f.label :super_name %>
+    <%= f.text_field :super_name %>
+  </div>
+  <div class="form-field">
+    <%= f.label :power_id %>
+    <%= f.collection_select :power_id, Power.all, :id, :display_name, {prompt: true} %>
+  </div>
+  <div class="form-field">
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>

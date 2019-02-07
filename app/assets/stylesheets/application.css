@@ -13,3 +13,147 @@
  *= require_tree .
  *= require_self
  */
+
+html { box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
+
+html, body {
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+body {
+  padding: 0 10px;
+}
+
+/*
+ * Core/Layout
+ */
+
+.title-content {
+
+}
+
+.title-content .title {
+  margin-bottom: 8px;
+}
+
+.main-content {
+
+}
+
+.action-items {
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.action-items a {
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.action-items a, .action-items a:visited {
+  color: rgb(0, 0, 238);
+}
+
+/*
+ * Components
+ */
+
+.item-list {
+
+}
+
+.item-list ul {
+  margin: 0;
+  padding: 0 0 0 20px;
+}
+
+.item-list ul > li {
+  margin: 0;
+  padding: 0;
+}
+
+.item-list-title {
+  margin-bottom: 4px;
+}
+
+.item-list-title.empty {
+  opacity: 0.3;
+}
+
+.filter-actions {
+  margin-bottom: 10px;
+}
+
+.details {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.detail {
+  margin: 0;
+  padding: 0;
+}
+
+.detail-key, .detail-value {
+  display: inline-block;
+}
+
+.detail-key {
+  /* font-style: italic; */
+  font-weight: light;
+}
+
+.detail-value {
+  font-weight: bold;
+}
+
+/*
+ * Forms
+ */
+
+.form-field {
+  margin-bottom: 10px;
+}
+
+.form-field > * {
+  display: inline-block;
+}
+
+/* 
+.form-field input[type='text'] {
+  border-style: solid;
+} */
+
+.form-errors {
+  padding: 5px;
+  margin-bottom: 10px;
+  background: hsl(4, 100%, 95%);
+}
+
+.form-errors h4, .form-errors ul {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+}
+
+.form-errors ul {
+  list-style-type: none;
+  font-size: 12px;
+}
+
+.form-errors h4 {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.field_with_errors label {
+  color: #f44336;
+}
+
+.field_with_errors input {
+  border-style: solid;
+  border-color: #f44336;
+}

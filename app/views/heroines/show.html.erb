@@ -1,0 +1,21 @@
+<div class="title-content">
+  <h2 class="title"><%= @heroine.super_name %></h2>
+</div>
+
+<div class="main-content">
+  <ul class="details">
+    <li class="detail">
+      <span class="detail-key">Name</span>
+      <span class="detail-value"><%= @heroine.name %></span>
+    </li>
+    <li class="detail">
+      <span class="detail-key">Power</span>
+      <span class="detail-value"><%= link_to @heroine.power_display_name, @heroine.power %></span>
+    </li>
+  </ul>
+
+  <div class="action-items">
+    <%= link_to "Back to All Heroines", heroines_path %>
+    <%= link_to "Create a New Heroine", new_heroine_path %>
+  </div>
+</div>
