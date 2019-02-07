@@ -6,4 +6,13 @@ class HeroinesController < ApplicationController
   def show
     @heroine = Heroine.find(params[:id])
   end
+
+  def new
+    @heroine = Heroine.new
+  end
+
+  def create
+    @heroine = Heroine.find(params[:id])
+  end
+
 end
