@@ -1,4 +1,15 @@
 <%= form_for @heroine do |f| %>
+  <% if @heroine.errors.any? %>
+    <div class="form-errors">
+      <h2>There were some errors:</h2>
+      <ul>
+        <% @heroine.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div class="form-field">
     <%= f.label :name %>
     <%= f.text_field :name %>

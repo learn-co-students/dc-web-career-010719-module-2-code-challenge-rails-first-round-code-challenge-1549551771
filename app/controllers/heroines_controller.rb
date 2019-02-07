@@ -18,6 +18,8 @@ class HeroinesController < ApplicationController
     @heroine = Heroine.new(heroine_params)
     if @heroine.save!
       redirect_to @heroine
+    else
+      render :new
     end
   end
 
