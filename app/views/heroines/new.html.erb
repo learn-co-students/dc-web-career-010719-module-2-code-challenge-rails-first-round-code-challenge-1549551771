@@ -1,5 +1,13 @@
 <h1>Create a new Superheroine!</h1>
 
+<% if @heroine.errors.any? %>
+<ul>
+  <% @heroine.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+
 <%= form_for @heroine do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %><br><br>
