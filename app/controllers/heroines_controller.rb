@@ -8,9 +8,26 @@ before_action :find_heroine, only: [:show]
 
   def show
   end
+  def new
+    @heroine = Heroine.new
+  end
+
+  def create
+    byebug
+    @heroine = Heroine.new(heroine_params)
+    if @heroine.valid?
+      @heroine.save
+      redirect_to @heroine
+    else
+      render :new
+    end
+  end
 
   private
   def find_heroine
     @heroine = Heroine.find(params[:id])
+  end
+  def heroine_params
+    params.require(:heroine).permit(:name, :super_name, :power_id)
   end
 end
