@@ -1,0 +1,17 @@
+<%= form_for @heroine do |f| %>
+  <div class="form-field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="form-field">
+    <%= f.label :super_name %>
+    <%= f.text_field :super_name %>
+  </div>
+  <div class="form-field">
+    <%= f.label :power_id %>
+    <%= f.collection_select :power_id, @powers, :id, :name, {prompt: true} %>
+  </div>
+  <div class="form-field">
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>

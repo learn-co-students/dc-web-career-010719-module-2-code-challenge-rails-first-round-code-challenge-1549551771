@@ -3,7 +3,15 @@
 </div>
 
 <div class="main-content">
-  <ul><% @heroines.each do |heroine| %>
-      <li><%= link_to heroine.super_name, heroine %></li>
-  <% end %></ul>
+  <div class="item-list">
+    <ul>
+      <% @heroines.each do |heroine| %>
+        <li><%= link_to heroine.super_name, heroine %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="action-items">
+    <%= link_to "Create a new Heroine", new_heroine_path %>
+  </div>
 </div>
