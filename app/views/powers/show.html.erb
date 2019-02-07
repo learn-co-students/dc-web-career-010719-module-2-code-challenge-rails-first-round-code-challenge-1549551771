@@ -1,0 +1,26 @@
+<div class="title-content">
+  <h2 class="title"><%= @power.display_name %></h2>
+</div>
+
+<div class="main-content">
+  <p><%= @power.description %></p>
+
+  <% if @power.heroines.empty? %>
+    <div class="item-list">
+      <h3 class="item-list-title empty">No Heroines</h3>
+    </div>
+  <% else %>
+    <div class="item-list">
+      <h3 class="item-list-title">Heroines</h3>
+      <ul>
+        <% @power.heroines.each do |heroine| %>
+          <li><%= link_to heroine.super_name, heroine %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="action-items">
+    <%= link_to "Back to All Powers", powers_path %>
+  </div>
+</div>
