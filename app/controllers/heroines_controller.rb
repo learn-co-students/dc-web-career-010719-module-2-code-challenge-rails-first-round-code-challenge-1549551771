@@ -18,7 +18,7 @@ class HeroinesController < ApplicationController
     else
       render :new
     end
-    
+
   end
 
 
