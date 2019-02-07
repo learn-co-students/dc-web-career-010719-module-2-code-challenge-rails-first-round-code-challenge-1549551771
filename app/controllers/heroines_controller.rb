@@ -22,6 +22,27 @@ class HeroinesController < ApplicationController
     end
   end
 
+  def search
+    search = params[:q]
+    h = Heroine.all.map { |e| e.super_name }
+
+    power = Power.find_by(name: search)
+    @heroines = []
+    
+    if !power.nil?
+      Heroine.all.each do |hero|
+        if hero.power_id == power.id
+          @heroines<< hero
+        end
+      end
+    else
+      @heroines = Heroine.all
+    end
+
+    # t = Hero.where("administrator = 1")
+  render :index2
+  end
+
 
   private
 
