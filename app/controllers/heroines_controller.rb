@@ -1,6 +1,6 @@
 class HeroinesController < ApplicationController
 
-  before_action :heroine_obj, only: [:show, :create]
+  before_action :heroine_obj, only: [:show]
 
   def index
     @heroines = Heroine.all
