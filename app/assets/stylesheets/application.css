@@ -118,9 +118,13 @@ body {
   display: inline-block;
 }
 
+.form-field input[type='text'] {
+  border-style: solid;
+}
+
 .form-errors {
   padding: 5px;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
   background: hsl(4, 100%, 95%);
 }
 
@@ -130,11 +134,20 @@ body {
   line-height: normal;
 }
 
+.form-errors ul {
+  list-style-type: none;
+  font-size: 12px;
+}
+
 .form-errors h4 {
   font-size: 14px;
   margin-bottom: 4px;
 }
 
-.field_with_errors label, .field_with_errors input {
-  border-color: red;
+.field_with_errors label {
+  color: #f44336;
+}
+
+.field_with_errors input {
+  border-color: #f44336;
 }
